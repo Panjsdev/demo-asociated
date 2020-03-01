@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.caja {
+    border: 1px solid black;
+    padding: 15px;
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.animada{
+    opacity: 0;
+    transition: all 1s;
+}
+
+.mostrarArriba{
+    animation: mostrarArriba 1s;
+}
+
+@keyframes mostrarArriba{
+    0% {
+        transform: translateY(60px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+/*Parallax*/
+
+.paracont {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.parallax {
+    position: absolute;
+    width: 100%;
+    background-image: url(golf_sustentable.jpg);
+    background-size: cover;
+    height: 100vh;
+    z-index: -1;
+}
+
+.titulo {
+    color: white;
+    font-size: 3em;
+    text-align: center;
+}
+
+/*Menú de navegación*/
+
+.contenedormenu{
+    width: 95%;
+    margin: auto;
+}
+
+header nav{
+    background: #3498db;
+    margin-bottom: 10px;
+}
+    header nav ul {
+        list-style: none;
+        overflow: hidden;
+    }
+
+        header nav ul li {
+            float: left;
+        }
+
+            header nav ul li a{
+                display: block;
+                color: white;
+                padding: 20px;
+                text-decoration: none;
+            }
+
+            header nav ul li a:hover {
+                background: #2980b9;
+                text-decoration: none;
+                color: white;
+            }
+
+
+.menu-fixed {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/*Sidebar*/
+
+#sidebar {
+    position:fixed;
+    width: 200px;
+    height: 100%;
+    background-color: black;
+    left: -200px;
+    transition: all 500ms;
+}
+
+#sidebar.active {
+    left: 0px;
+}
+
+#sidebar ul li {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid grey;
+}
+
+#sidebar .toggle-btn {
+    position: absolute;
+    left: 230px;
+}
+
+#sidebar .toggle-btn span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: #151719;
+    margin: 5px 0px;
+}
